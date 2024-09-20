@@ -77,6 +77,6 @@ Tant qu'il reste des photos dans la liste, l'outil parcourt la liste jusqu'à ce
 
 ## Un outil libre et gratuit
 
-Trombiquiz est diffusé sous licence libre. N'hésitez pas à modifier le script pour qu'il fonctionne avec une autre application. Les [sources](https://forge.apps.education.fr/eyssette/apprendre/-/blob/main/prenoms.js?ref_type=heads) sont sur la Forge des Communs Numériques Éducatifs.
+Trombiquiz est diffusé sous licence libre. N'hésitez pas à modifier le script pour qu'il fonctionne avec une autre application. Les [sources](https://forge.apps.education.fr/trombiquiz/trombiquiz.forge.apps.education.fr) sont sur la Forge des Communs Numériques Éducatifs.
 
-Si vous avez un problème ou une demande d'évolution de l'outil, n'hésitez pas à me contacter, en utilisant de préférence les “[tickets](https://forge.apps.education.fr/eyssette/apprendre/-/issues)”. Vous pouvez sinon me contacter via les [réseaux sociaux](https://eyssette.forge.apps.education.fr).
+Si vous avez un problème ou une demande d'évolution de l'outil, n'hésitez pas à me contacter, en utilisant de préférence les “[tickets](https://forge.apps.education.fr/trombiquiz/trombiquiz.forge.apps.education.fr/-/issues)”. Vous pouvez sinon me contacter via les [réseaux sociaux](https://eyssette.forge.apps.education.fr).
