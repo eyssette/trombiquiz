@@ -22,7 +22,7 @@ Il fonctionne aussi pour les photos des participants à une formation sur Moodle
 
 Si vous utilisez un autre logiciel : vous pouvez me demander de l'intégrer à ce script
 
-Si vous disposez des fichiers des photos des élèves, vous pouvez aussi [créer une page HTML qui fonctionnera avec Trombiquiz](trombiquiz-creer-fichier.html).
+Si vous disposez des fichiers des photos des élèves, vous pouvez aussi [créer une page HTML qui fonctionnera avec Trombiquiz](creer-fichier.html).
 
 > Attention, les logiciels ci-dessus peuvent évoluer. Si Trombiquiz ne fonctionne plus, il faudra soit simplement télécharger la nouvelle version, soit me l'indiquer pour que je fasse les changements nécessaires.
 
