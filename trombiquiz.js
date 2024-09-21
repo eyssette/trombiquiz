@@ -78,6 +78,30 @@
 			};
 			return true;
 		}
+		if (url.indexOf("oneconnect") > -1) {
+			images = document.body.querySelectorAll(".item.user div.top");
+			isPhotoStudent = (image) => {
+				return true;
+			};
+			isPhotoStudentOK = (image) => {
+				return true;
+			};
+			isConditionNumberPhotosOK = (imagesArray) => {
+				return true;
+			};
+			const regexFindImageSource = /"(?<url>.*?)"/;
+			imageSource = (image) => {
+				const styleStringBackgroundImage = image.style.backgroundImage
+				const styleStringFindImage = styleStringBackgroundImage.match(regexFindImageSource);
+				const src = styleStringFindImage.groups.url;
+				return src;
+			};
+			studentNameFromImageElement = (image) => {
+				return image.parentNode.querySelector(".bottom span.ng-binding")
+					.textContent;
+			};
+			return true;
+		}
 		if (document.body.classList.contains("apprendre-prenoms")) {
 			images = document.body.querySelectorAll("#image-list img");
 			isPhotoStudent = (image) => {
