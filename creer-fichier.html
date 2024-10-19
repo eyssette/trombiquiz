@@ -53,6 +53,9 @@
 			color: red;
 			font-weight: bold;
 		}
+		input {
+			display:none;
+		}
 	</style>
 </head>
 
@@ -69,15 +72,17 @@
 			</ol>
 		</div>
 	</header>
-	<div class="drop-zone" id="drop-zone">Déposez vos images ici</div>
+	<div class="drop-zone" id="drop-zone">Glissez-déposez vos images ici (ou bien cliquez sur cette zone)</div>
 	<ul class="image-list" id="image-list"></ul>
+	<input type="file" id="file-input" accept="image/*" multiple/>
 
 	<script>
 		const dropZone = document.getElementById('drop-zone');
 		const imageList = document.getElementById('image-list');
+		const fileInput = document.getElementById('file-input');
 
 		// Empêcher le comportement par défaut de la zone de dépôt (ouvrir le fichier)
-		['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+		['dragenter', 'dragover', 'dragleave'].forEach(eventName => {
 			dropZone.addEventListener(eventName, (e) => e.preventDefault());
 		});
 
@@ -85,14 +90,11 @@
 		['dragenter', 'dragover'].forEach(eventName => {
 			dropZone.addEventListener(eventName, () => dropZone.style.borderColor = '#000');
 		});
-
-		['dragleave', 'drop'].forEach(eventName => {
-			dropZone.addEventListener(eventName, () => dropZone.style.borderColor = '#ccc');
-		});
+		dropZone.addEventListener('dragleave', () => dropZone.style.borderColor = '#ccc');
 
 		// Fonction pour traiter les fichiers déposés
-		dropZone.addEventListener('drop', (e) => {
-			const files = Array.from(e.dataTransfer.files);
+		function handleFiles(files) {
+			files = Array.from(files);
 
 			files.forEach(file => {
 				// Vérifier si c'est un fichier image
@@ -128,6 +130,22 @@
 					reader.readAsDataURL(file);
 				}
 			});
+		};
+
+		dropZone.addEventListener('drop', (e) => {
+			e.preventDefault()
+			dropZone.style.borderColor = '#ccc'
+			const files = e.dataTransfer.files;
+			handleFiles(files);
+		});
+
+		// Traiter les fichiers sélectionnés via clic
+		dropZone.addEventListener('click', () => {
+			fileInput.click();
+		});
+		fileInput.addEventListener('change', (e) => {
+			const files = e.target.files;
+			handleFiles(files);
 		});
 	</script>
 </body>
