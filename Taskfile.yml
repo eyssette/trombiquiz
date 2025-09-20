@@ -46,3 +46,14 @@ tasks:
     cmds:
       - python3 trombiquizCreateBookmarklet.py
     description: Create bookmarklet version of trombiquiz.js
+
+  push:
+    vars:
+      GIT_REPO_NAMES: [trombiquiz, github]
+    preconditions:
+      - test ! -f app/DEBUG
+    cmds:
+      - task: lint
+      - task: tests:unit
+      - for: { var: GIT_REPO_NAMES }
+        cmd:  git push {{.ITEM}} && git push {{.ITEM}} --tags
