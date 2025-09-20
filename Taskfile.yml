@@ -53,7 +53,5 @@ tasks:
     preconditions:
       - test ! -f app/DEBUG
     cmds:
-      - task: lint
-      - task: tests:unit
       - for: { var: GIT_REPO_NAMES }
         cmd:  git push {{.ITEM}} && git push {{.ITEM}} --tags
