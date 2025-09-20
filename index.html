@@ -14,11 +14,19 @@
 		<title>Trombiquiz</title>
 		<style>
 			code{white-space: pre-wrap;}
-   span.smallcaps{font-variant: small-caps;}
-   span.underline{text-decoration: underline;}
-   div.column{display: inline-block; vertical-align: top; width: 50%;}
-   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-   ul.task-list{list-style: none;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+/* The extra [class] is a hack that increases specificity enough to
+   override a similar rule in reveal.js */
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  font-size: inherit;
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 		</style>
 				<link rel="stylesheet" href="pandoc/style.css" />
 		  		<!--[if lt IE 9]>
@@ -31,61 +39,111 @@
 		 		<header id="title-block-header">
 			<h1 class="title">👩🏾‍🎓 Trombiquiz</h1>
 			   		</header>
-		  <h2 id="un-outil-pour-apprendre-les-prénoms-de-ses-élèves">Un outil pour apprendre les prénoms de ses élèves</h2>
-<p>Il est essentiel de connaître très rapidement les prénoms de ses élèves.</p>
+		  <h2 id="un-outil-pour-apprendre-les-prénoms-de-ses-élèves">Un outil
+pour apprendre les prénoms de ses élèves</h2>
+<p>Il est essentiel de connaître très rapidement les prénoms de ses
+élèves.</p>
 <ul>
-<li>Les élèves sentent qu’ils sont respectés en tant que personne et cela crée tout de suite un climat de confiance.</li>
-<li>La gestion de classe en cas de problème est beaucoup plus facile.</li>
+<li>Les élèves sentent qu’ils sont respectés en tant que personne et
+cela crée tout de suite un climat de confiance.</li>
+<li>La gestion de classe en cas de problème est beaucoup plus
+facile.</li>
 </ul>
-<p>Je propose ici un outil, Trombiquiz, qui permet à partir d’un trombinoscope en ligne de mémoriser plus facilement les prénoms de ses élèves.</p>
-<p>Si on dispose des photos avant même le premier cours, on peut ainsi arriver en classe en connaissant déjà au moins une bonne partie des élèves, ce qui les surprend souvent de manière très <span style='white-space:nowrap'>positive&thinsp;!</span></p>
-<h2 id="comment-ça-marche">Comment ça <span style='white-space:nowrap'>marche&thinsp;?</span></h2>
-<p>Trombiquiz est un “bookmarklet” qui ne fonctionne que si vous le mettez dans un favori afin de pouvoir cliquer dessus quand vous serez sur un trombinoscope de vos élèves.</p>
-<p>Trombiquiz fonctionne directement avec les applications <span style='white-space:nowrap'>suivantes&thinsp;:</span></p>
+<p>Je propose ici un outil, Trombiquiz, qui permet à partir d’un
+trombinoscope en ligne de mémoriser plus facilement les prénoms de ses
+élèves.</p>
+<p>Si on dispose des photos avant même le premier cours, on peut ainsi
+arriver en classe en connaissant déjà au moins une bonne partie des
+élèves, ce qui les surprend souvent de manière très
+<span style='white-space:nowrap'>positive&thinsp;!</span></p>
+<h2 id="comment-ça-marche">Comment ça
+<span style='white-space:nowrap'>marche&thinsp;?</span></h2>
+<p>Trombiquiz est un “bookmarklet” qui ne fonctionne que si vous le
+mettez dans un favori afin de pouvoir cliquer dessus quand vous serez
+sur un trombinoscope de vos élèves.</p>
+<p>Trombiquiz fonctionne directement avec les applications
+<span style='white-space:nowrap'>suivantes&thinsp;:</span></p>
 <ul>
 <li>Pronote</li>
 <li>Ecole Directe</li>
 <li>Oneconnect</li>
 </ul>
-<p>Il fonctionne aussi pour les photos des participants à une formation sur Moodle ou Magistère.</p>
-<p>Si vous utilisez un autre <span style='white-space:nowrap'>logiciel&thinsp;:</span> vous pouvez me demander de l’intégrer à ce script (voir tout en bas de cette page).</p>
-<p>Si vous disposez des fichiers des photos des élèves, vous pouvez aussi <a href="creer-fichier.html">créer une page HTML qui fonctionnera avec Trombiquiz</a>.</p>
+<p>Il fonctionne aussi pour les photos des participants à une formation
+sur Moodle ou Magistère.</p>
+<p>Si vous utilisez un autre
+<span style='white-space:nowrap'>logiciel&thinsp;:</span> vous pouvez me
+demander de l’intégrer à ce script (voir tout en bas de cette page).</p>
+<p>Si vous disposez des fichiers des photos des élèves, vous pouvez
+aussi <a href="creer-fichier.html">créer une page HTML qui fonctionnera
+avec Trombiquiz</a>.</p>
 <blockquote>
-<p>Attention, les logiciels ci-dessus peuvent évoluer. Si Trombiquiz ne fonctionne plus, il faudra soit simplement télécharger la nouvelle version, soit me l’indiquer pour que je fasse les changements nécessaires.</p>
+<p>Attention, les logiciels ci-dessus peuvent évoluer. Si Trombiquiz ne
+fonctionne plus, il faudra soit simplement télécharger la nouvelle
+version, soit me l’indiquer pour que je fasse les changements
+nécessaires.</p>
 </blockquote>
 <h2 id="créer-un-nouveau-favori">1/ Créer un nouveau favori</h2>
-<p>Affichez la barre de vos favoris et glisser-déposer le lien ci-dessous dans vos <span style='white-space:nowrap'>favoris&thinsp;:</span></p>
+<p>Affichez la barre de vos favoris et glisser-déposer le lien
+ci-dessous dans vos
+<span style='white-space:nowrap'>favoris&thinsp;:</span></p>
 <p><a href="javascript:(function(){const script=document.createElement('script');script.src='https://trombiquiz.forge.apps.education.fr/trombiquiz.min.js';document.body.appendChild(script);})();">Trombiquiz</a></p>
-<h2 id="afficher-le-trombinoscope-de-ses-élèves">2/ Afficher le trombinoscope de ses élèves</h2>
-<p>Par exemple sur Pronote (version en <span style='white-space:nowrap'>ligne)&thinsp;:</span></p>
+<h2 id="afficher-le-trombinoscope-de-ses-élèves">2/ Afficher le
+trombinoscope de ses élèves</h2>
+<p>Par exemple sur Pronote (version en
+<span style='white-space:nowrap'>ligne)&thinsp;:</span></p>
 <p>Cliquez sur “Mes données” / “Classes/élèves” / “Trombinoscope”</p>
 <p><img src="img/helpPronote.png" /></p>
-<p>Choisissez la classe et cliquez sur votre nouveau favori “Trombiquiz”</p>
+<p>Choisissez la classe et cliquez sur votre nouveau favori
+“Trombiquiz”</p>
 <h2 id="apprendre-les-prénoms">3/ Apprendre les prénoms</h2>
-<h3 id="choisir-lordre-de-présentation">Choisir l’ordre de présentation</h3>
-<p>Trombiquiz ouvre un popup et vous propose d’apprendre soit les prénoms dans l’ordre aléatoire (ordre par <span style='white-space:nowrap'>défaut&thinsp;:</span> cliquez sur OK ou appuyez sur Entrée), soit dans l’ordre alphabétique (cliquez sur Annuler ou appuyez sur Esc).</p>
+<h3 id="choisir-lordre-de-présentation">Choisir l’ordre de
+présentation</h3>
+<p>Trombiquiz ouvre un popup et vous propose d’apprendre soit les
+prénoms dans l’ordre aléatoire (ordre par
+<span style='white-space:nowrap'>défaut&thinsp;:</span> cliquez sur OK
+ou appuyez sur Entrée), soit dans l’ordre alphabétique (cliquez sur
+Annuler ou appuyez sur Esc).</p>
 <pre class="warning"><code>Attention : pour que Trombiquiz fonctionne, il faut qu&#39;on puisse voir toutes les photos des élèves sur l&#39;écran, et si vous mettez du temps à faire votre choix de l&#39;ordre de présentation, votre navigateur va probablement bloquer l&#39;ouverture de la page des photos (il faudra alors soit relancer Trombiquiz et répondre plus vite, soit accepter les popups).</code></pre>
 <p><img src="img/firstMessage.png" /></p>
-<h3 id="sentraîner-à-mémoriser-les-prénoms">S’entraîner à mémoriser les prénoms</h3>
+<h3 id="sentraîner-à-mémoriser-les-prénoms">S’entraîner à mémoriser les
+prénoms</h3>
 <p>Une page s’ouvre et Trombiquiz affiche une photo à la fois.</p>
 <p><img src="img/studentPhoto.png" /></p>
-<p>Quand vous pensez avoir retrouvé le prénom et le nom de l’élève, cliquez sur “Montrer la réponse”.</p>
+<p>Quand vous pensez avoir retrouvé le prénom et le nom de l’élève,
+cliquez sur “Montrer la réponse”.</p>
 <ul>
-<li>Raccourci <span style='white-space:nowrap'>clavier&thinsp;:&thinsp;⏎</span> (touche “Entrée”).</li>
+<li>Raccourci
+<span style='white-space:nowrap'>clavier&thinsp;:&thinsp;⏎</span>
+(touche “Entrée”).</li>
 </ul>
 <p><img src="img/interface.png" /></p>
-<p>Si c’était facile, cliquez sur “Facile”. La photo de l’élève sera alors sortie de la liste.</p>
+<p>Si c’était facile, cliquez sur “Facile”. La photo de l’élève sera
+alors sortie de la liste.</p>
 <ul>
-<li>Raccourci <span style='white-space:nowrap'>clavier&thinsp;:&thinsp;→</span> (flèche droite)</li>
+<li>Raccourci
+<span style='white-space:nowrap'>clavier&thinsp;:&thinsp;→</span>
+(flèche droite)</li>
 </ul>
-<p>Si c’était difficile, cliquez sur “Difficile”. La photo reste dans la liste.</p>
+<p>Si c’était difficile, cliquez sur “Difficile”. La photo reste dans la
+liste.</p>
 <ul>
-<li>Raccourci <span style='white-space:nowrap'>clavier&thinsp;:&thinsp;←</span> (flèche gauche)</li>
+<li>Raccourci
+<span style='white-space:nowrap'>clavier&thinsp;:&thinsp;←</span>
+(flèche gauche)</li>
 </ul>
-<p>Tant qu’il reste des photos dans la liste, l’outil parcourt la liste jusqu’à ce que vous ayez retrouvé tous les prénoms des élèves.</p>
+<p>Tant qu’il reste des photos dans la liste, l’outil parcourt la liste
+jusqu’à ce que vous ayez retrouvé tous les prénoms des élèves.</p>
 <p><img src="img/endMessage.png" /></p>
 <h2 id="un-outil-libre-et-gratuit">Un outil libre et gratuit</h2>
-<p>Trombiquiz est diffusé sous licence libre. N’hésitez pas à modifier le script pour qu’il fonctionne avec une autre application. Les <a href="https://forge.apps.education.fr/trombiquiz/trombiquiz.forge.apps.education.fr">sources</a> sont sur la Forge des Communs Numériques Éducatifs.</p>
-<p>Si vous avez un problème ou une demande d’évolution de l’outil, n’hésitez pas à me contacter, en utilisant de préférence les “<a href="https://forge.apps.education.fr/trombiquiz/trombiquiz.forge.apps.education.fr/-/issues">tickets</a>”. Vous pouvez sinon me contacter via les <a href="https://eyssette.forge.apps.education.fr">réseaux sociaux</a>.</p> 
+<p>Trombiquiz est diffusé sous licence libre. N’hésitez pas à modifier
+le script pour qu’il fonctionne avec une autre application. Les <a
+href="https://forge.apps.education.fr/trombiquiz/trombiquiz.forge.apps.education.fr">sources</a>
+sont sur la Forge des Communs Numériques Éducatifs.</p>
+<p>Si vous avez un problème ou une demande d’évolution de l’outil,
+n’hésitez pas à me contacter, en utilisant de préférence les “<a
+href="https://forge.apps.education.fr/trombiquiz/trombiquiz.forge.apps.education.fr/-/issues">tickets</a>”.
+Vous pouvez sinon me contacter via les <a
+href="https://eyssette.forge.apps.education.fr">réseaux
+sociaux</a>.</p> 
 	</body>
 </html>

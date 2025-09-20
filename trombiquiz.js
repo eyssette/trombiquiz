@@ -52,7 +52,9 @@
 				return true;
 			};
 			imageSource = (image) => {
-				return image.src;
+				// Permet d'obtenir une image de meilleure qualité sur Moodle
+				const source = image.src.replace("f2?rev=", "f3?rev=");
+				return source;
 			};
 			studentNameFromImageElement = (image) => {
 				return image.parentNode.textContent;
