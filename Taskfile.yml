@@ -1,0 +1,48 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  build:
+    aliases:
+      - default
+    cmds:
+      - task: pandoc-convert
+      - task: minify-js
+      - task: create-bookmarklet
+
+  pandoc-convert:
+    sources:
+      - README.md
+      - index.html
+      - pandoc/fr-nbsp.lua
+      - pandoc/set-title-from-h1.lua
+      - pandoc/style.css
+      - pandoc/template.html
+      - pandoc/include.lua
+    generates:
+      - index.html
+    cmds:
+      - pandoc -f markdown+lists_without_preceding_blankline+emoji -t html -s README.md -o index.html --lua-filter=pandoc/fr-nbsp.lua --lua-filter=pandoc/set-title-from-h1.lua --mathjax --css=\"pandoc/style.css\" --template=pandoc/template.html --lua-filter=pandoc/include.lua
+    description: Convert README.md to index.html using Pandoc
+
+  minify-js:
+    sources:
+      - trombiquiz.js
+      - trombiquiz.min.js
+    generates:
+      - trombiquiz.min.js
+    cmds:
+          - npx terser trombiquiz.js --output trombiquiz.min.js --compress --mangle
+    description: Minify trombiquiz.js to trombiquiz.min.js
+    
+  create-bookmarklet:
+    sources:
+      - trombiquizCreateBookmarklet.py
+      - trombiquiz.min.js
+      - trombiquizBookmarklet.js
+    generates:
+      - trombiquizBookmarklet.js
+    cmds:
+      - python3 trombiquizCreateBookmarklet.py
+    description: Create bookmarklet version of trombiquiz.js
