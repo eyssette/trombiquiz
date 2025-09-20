@@ -18,8 +18,7 @@ Trombiquiz fonctionne directement avec les applications suivantes :
 - Pronote
 - Ecole Directe
 - Oneconnect
-
-Il fonctionne aussi pour les photos des participants à une formation sur Moodle ou Magistère.
+- Moodle / Magistère
 
 Si vous utilisez un autre logiciel : vous pouvez me demander de l'intégrer à ce script (voir tout en bas de cette page).
 
