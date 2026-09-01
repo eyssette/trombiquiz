@@ -9,7 +9,7 @@
 	function checkSource() {
 		const url = window.location.href;
 		if (url.indexOf("pronote") > -1) {
-			images = document.body.querySelectorAll('div[role="main"] img');
+			images = document.body.querySelectorAll('div[role="button"] img');
 			isPhotoStudent = (image) => {
 				return image.alt.includes("Photo de");
 			};
