@@ -37,6 +37,8 @@ tasks:
     description: Minify trombiquiz.js to trombiquiz.min.js
     
   create-bookmarklet:
+    deps:
+      - minify-js
     sources:
       - trombiquizCreateBookmarklet.py
       - trombiquiz.min.js
