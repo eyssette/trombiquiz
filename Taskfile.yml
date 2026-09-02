@@ -4,6 +4,7 @@ version: '3'
 
 tasks:
   build:
+    desc: Exécute toutes les tâches de construction du bookmarklet et du site explicatif
     aliases:
       - default
     cmds:
@@ -12,6 +13,7 @@ tasks:
       - task: create-bookmarklet
 
   pandoc-convert:
+    desc: Convertit le fichier README.md en index.html avec Pandoc
     sources:
       - README.md
       - index.html
@@ -27,6 +29,7 @@ tasks:
     description: Convert README.md to index.html using Pandoc
 
   minify-js:
+    desc: Minifie le fichier trombiquiz.js en trombiquiz.min.js
     sources:
       - trombiquiz.js
       - trombiquiz.min.js
@@ -37,6 +40,7 @@ tasks:
     description: Minify trombiquiz.js to trombiquiz.min.js
     
   create-bookmarklet:
+    desc: Crée la version bookmarklet de trombiquiz.js
     deps:
       - minify-js
     sources:
