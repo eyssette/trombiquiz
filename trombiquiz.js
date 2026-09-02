@@ -14,16 +14,16 @@
 				return image.alt.includes("Photo de");
 			};
 			isPhotoStudentOK = (image) => {
-				return Array.from(image.classList).includes("ie-imgviewer");
+				return !image.classList.contains("img-portrait-empty") && !image.src.includes("PortraitSilhouette.png");
 			};
 			isConditionNumberPhotosOK = (imagesArray) => {
 				return imagesArray.length < 3 ? false : true;
 			};
 			imageSource = (image) => {
-				return image.dataset.src;
+				return isPhotoStudentOK(image) ? image.dataset.src : image.src;
 			};
 			studentNameFromImageElement = (image) => {
-				const imageSrc = imageSource(image);
+				const imageSrc = image.dataset.src;
 				const srcSansParametres = imageSrc.split("?")[0];
 				const indexDerniereBarreOblique = srcSansParametres.lastIndexOf("/");
 				const nomPrenom = decodeURIComponent(
